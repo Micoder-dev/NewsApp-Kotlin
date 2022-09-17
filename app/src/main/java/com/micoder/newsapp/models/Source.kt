@@ -1,4 +1,4 @@
-package com.micoder.newsapp
+package com.micoder.newsapp.models
 
 data class Source(
     val id: String,

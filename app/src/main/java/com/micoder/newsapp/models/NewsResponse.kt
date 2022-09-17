@@ -1,4 +1,6 @@
-package com.micoder.newsapp
+package com.micoder.newsapp.models
+
+import com.micoder.newsapp.models.Article
 
 data class NewsResponse(
     val articles: List<Article>,

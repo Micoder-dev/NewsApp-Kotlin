@@ -1,6 +1,6 @@
 package com.micoder.newsapp.api
 
-import com.micoder.newsapp.NewsResponse
+import com.micoder.newsapp.models.NewsResponse
 import com.micoder.newsapp.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET

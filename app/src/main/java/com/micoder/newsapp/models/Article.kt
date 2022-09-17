@@ -1,4 +1,4 @@
-package com.micoder.newsapp
+package com.micoder.newsapp.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

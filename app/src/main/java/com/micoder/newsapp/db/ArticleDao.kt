@@ -2,7 +2,7 @@ package com.micoder.newsapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.micoder.newsapp.Article
+import com.micoder.newsapp.models.Article
 
 @Dao
 interface ArticleDao {

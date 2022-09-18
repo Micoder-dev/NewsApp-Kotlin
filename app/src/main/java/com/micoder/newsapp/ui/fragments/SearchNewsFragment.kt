@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AbsListView
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.micoder.newsapp.R
 import com.micoder.newsapp.adapters.NewsAdapter
 import com.micoder.newsapp.databinding.FragmentSearchNewsBinding
@@ -77,7 +79,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
-                        Log.d(TAG, "An error occured: $message")
+                        Snackbar.make(view, "An Error occurred: $message", Snackbar.LENGTH_LONG).show()
                     }
                 }
                 is Resource.Loading -> {

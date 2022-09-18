@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.micoder.newsapp.R
 import com.micoder.newsapp.databinding.ItemArticlePreviewBinding
 import com.micoder.newsapp.models.Article
 
@@ -40,8 +41,8 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         holder.itemView.apply {
 
             with(holder){
-                    Glide.with(context).load(article.urlToImage).into(binding.ivArticleImage)
-                    binding.tvSource.text = article.source.name
+                    Glide.with(context).load(article.urlToImage).placeholder(R.drawable.news_img).into(binding.ivArticleImage)
+                    binding.tvSource.text = article.source!!.name
                     binding.tvTitle.text = article.title
                     binding.tvDescription.text = article.description
                     binding.tvPublishedAt.text = article.publishedAt

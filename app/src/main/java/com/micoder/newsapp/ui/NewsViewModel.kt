@@ -3,6 +3,7 @@ package com.micoder.newsapp.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.micoder.newsapp.models.Article
 import com.micoder.newsapp.models.NewsResponse
 import com.micoder.newsapp.repository.NewsRepository
 import com.micoder.newsapp.util.Resource
@@ -49,6 +50,16 @@ class NewsViewModel(val newsRepository: NewsRepository) : ViewModel() {
             }
         }
         return Resource.Error(respose.message())
+    }
+
+    fun saveArticle(article: Article) = viewModelScope.launch {
+        newsRepository.upsert(article)
+    }
+
+    fun getSavedNews() = newsRepository.getSavedNews()
+
+    fun deleteArticle(article: Article) = viewModelScope.launch {
+        newsRepository.deleteArticle(article)
     }
 
 }
